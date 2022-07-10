@@ -28,7 +28,7 @@
  * @start: A pointer to the start of buffer
  * @len: The length of the string stored in buffer.
  */
- typedef struct buffer_s
+typedef struct buffer_s
 {
 	char *buffer;
 	char *start;
