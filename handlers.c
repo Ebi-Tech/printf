@@ -44,7 +44,7 @@ unsigned char handle_flags(const char *flag, char *index)
 		if (flags[j].value == 0)
 			break;
 	}
-	
+
 	return (ret);
 }
 
@@ -91,7 +91,7 @@ int handle_width(va_list args, const char *modifier, char *index)
 		if (*modifier == '*')
 		{
 			value = va_arg(args, int);
-			if (value <= 0)	
+			if (value <= 0)
 				return (0);
 			return (value);
 		}
@@ -124,7 +124,7 @@ int handle_precision(va_list args, const char *modifier, char *index)
 	modifier++;
 	(*index)++;
 
-	if ((*modifier <= '0' || *modifier > '9') && 
+	if ((*modifier <= '0' || *modifier > '9') &&
 	     *modifier != '*')
 	{
 		if (*modifier == '0')
@@ -132,7 +132,7 @@ int handle_precision(va_list args, const char *modifier, char *index)
 		return (0);
 	}
 
-	while ((*modifier >= '0' && *modifier <= '9') || 
+	while ((*modifier >= '0' && *modifier <= '9') ||
 	       (*modifier == '*'))
 	{
 		(*index)++;

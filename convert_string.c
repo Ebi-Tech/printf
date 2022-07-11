@@ -176,7 +176,7 @@ unsigned int convert_R(va_list args, buffer_t *output,
 		size++;
 
 	ret += print_string_width(output, flags, wid, prec, size);
-	
+
 	prec = (prec == -1) ? size : prec;
 	for (i = 0; *(str + i) != '\0' && i < prec; i++)
 	{
