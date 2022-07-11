@@ -18,7 +18,6 @@ unsigned char handle_flags(const char *flag, char *index)
 {
 	int i, j;
 	unsigned char ret = 0;
-
 	flag_t flags[] = {
 		{'+', PLUS},
 		{' ', SPACE},
@@ -56,7 +55,7 @@ unsigned char handle_flags(const char *flag, char *index)
  * Return: If a lenth modifier is matched - its corresponding value.
  * Otherwise - 0.
  */
- unsigned char handle_length(const char *modifier, char *index)
+unsigned char handle_length(const char *modifier, char *index)
 {
 	if (*modifier == 'h')
 	{
@@ -125,16 +124,14 @@ int handle_precision(va_list args, const char *modifier, char *index)
 	modifier++;
 	(*index)++;
 
-	if ((*modifier <= '0' || *modifier > '9') &&
-			*modifier != '*')
+	if ((*modifier <= '0' || *modifier > '9') && *modifier != '*')
 	{
 		if (*modifier == '0')
 			(*index)++;
 		return (0);
 	}
 
-	while ((*modifier >= '0' && *modifier <= '9') ||
-			(*modifier == '*'))
+	while ((*modifier >= '0' && *modifier <= '9') || (*modifier == '*'))
 	{
 		(*index)++;
 
